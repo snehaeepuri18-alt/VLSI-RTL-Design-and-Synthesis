@@ -52,7 +52,9 @@ The RTL source file used in the experiment is:
 
 The RTL describes the intended functional behavior of the MUX.
 
----
+### RTL Code
+
+![2:1 MUX Verilog RTL Code](good_mux_code.png)
 
 ## 3. Testbench
 
