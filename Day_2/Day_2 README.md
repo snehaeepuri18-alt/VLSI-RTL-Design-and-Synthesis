@@ -281,19 +281,19 @@ The waveforms were used to observe:
 
 The waveform below shows the simulated behavior of the D Flip-Flop with asynchronous reset.
 
-![DFF with Asynchronous Reset](dff_asyncres.png)
+![DFF with Asynchronous Reset](dff_asyncres_waveform.png)
 
 ### DFF with Asynchronous Set
 
 The waveform below shows the simulated behavior of the D Flip-Flop with asynchronous set.
 
-![DFF with Asynchronous Set](dff_async_set.png)
+![DFF with Asynchronous Set](dff_async_set_waveform.png)
 
 ### DFF with Synchronous Reset
 
 The waveform below shows the simulated behavior of the D Flip-Flop with synchronous reset.
 
-![DFF with Synchronous Reset](dff_syncres.png)
+![DFF with Synchronous Reset](dff_syncres_waveform.png)
 ## 13. Files in Day 2
 
 | File | Description |
