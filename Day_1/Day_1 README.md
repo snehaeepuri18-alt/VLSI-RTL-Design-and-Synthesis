@@ -52,9 +52,6 @@ The RTL source file used in the experiment is:
 
 The RTL describes the intended functional behavior of the MUX.
 
-### RTL Code
-
-![2:1 MUX Verilog RTL Code](good_mux_code.png)
 
 ## 3. Testbench
 
@@ -66,7 +63,10 @@ The testbench file used was:
 
 The testbench applies different combinations of input and select signals and observes the output of the MUX.
 
----
+### RTL and testbench code
+
+![2:1 MUX Verilog RTL Code](good_mux_code.png)
+
 
 ## 4. RTL Simulation
 
@@ -88,9 +88,9 @@ The RTL design and testbench were simulated using Icarus Verilog.
              v
       Waveform Analysis
 
-The simulation results were observed using GTKWave to verify the functional behavior of the MUX.
+The simulation waveform obtained using GTKWave is shown below.
 
----
+![2:1 MUX GTKWave Simulation Waveform](good_mux_waveform.png)
 
 ## 5. Yosys Synthesis
 
