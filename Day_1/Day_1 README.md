@@ -1,4 +1,4 @@
-# Day 1 – RTL Design and Synthesis
+# Day 1 – Introduction to Verilog RTL design and Synthesis
 
 ## Overview
 
