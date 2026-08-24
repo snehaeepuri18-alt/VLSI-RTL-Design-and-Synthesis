@@ -78,133 +78,23 @@ Some common causes discussed in this module are:
 
 A sensitivity list specifies the signals that cause an `always` block to execute.
 
-For example:
-
-```verilog
 always @(a or b)
+
 If a signal affecting the logic is missing from the sensitivity list, simulation may not update correctly when that signal changes.
 
 This can result in a synthesis-simulation mismatch.
 
 ---
-##6. Blocking and Non-Blocking Assignments
-##Blocking Assignment
 
-Blocking assignment uses = and is generally used for combinational logic.
+## 6. Blocking and Non-Blocking Assignments
 
+### Blocking Assignment
+
+Blocking assignment uses `=` and is generally used for combinational logic.
+
+```verilog
 always @(*)
 begin
     a = b;
     c = a;
 end
-##Non-Blocking Assignment
-
-Non-blocking assignment uses <= and is generally used for sequential logic.
-
-always @(posedge clk)
-begin
-    a <= b;
-    c <= a;
-end
-
-Using the appropriate assignment type is important for correctly modeling the intended hardware.
----
-7. Practical Gate-Level Simulation
-
-Three cases were studied during the practical work:
-
-Two synthesis-simulation mismatch cases
-One synthesis-simulation matching case
-
-The Yosys synthesis results and GTKWave waveforms were examined for each case.
----
-
-### PART 2
-
-```markdown
-## 8. Synthesis-Simulation Mismatch – Case 1
-
-The first example demonstrated a mismatch between RTL simulation and Gate-Level Simulation.
-
-### Yosys Result
-
-![Mismatch Case 1 – Yosys](bad_mux_show.png)
-
-### GTKWave Waveform
-
-![Mismatch Case 1 – GTKWave](gls_bad_mux.png)
-
-
-
----
-
-## 9. Synthesis-Simulation Mismatch – Case 2
-
-The second example demonstrated another synthesis-simulation mismatch.
-
-### Yosys Result
-
-![Mismatch Case 2 – Yosys](blocking_show.png)
-
-### GTKWave Waveform
-
-![Mismatch Case 2 – GTKWave](gls_blocking.png)
-
----
-
-## 10. Synthesis-Simulation Match
-
-The third example demonstrated a matching case where the RTL and synthesized gate-level behavior were consistent.
-
-### Yosys Result
-
-![Matching Case – Yosys](ternary_mux_show.png)
-
-### GTKWave Waveform
-
-![Matching Case – GTKWave](gls_ternary_mux.png)
-
----
-
-## 11. Overall RTL-to-GLS Flow
-
-    RTL Design
-         |
-         v
-    RTL Simulation
-         |
-         v
-      Synthesis
-         |
-         v
-    Gate-Level Netlist
-         |
-         v
- Gate-Level Simulation
-         |
-         v
-    GTKWave Analysis
-
----
-
-## 12. Key Learnings
-
-- Understood the concept of Gate-Level Simulation.
-- Learned why GLS is performed after synthesis.
-- Understood functional and timing verification.
-- Learned about synthesis-simulation mismatch.
-- Understood the effect of a missing sensitivity list.
-- Learned the difference between blocking and non-blocking assignments.
-- Understood the importance of proper Verilog coding.
-- Compared two mismatch cases and one matching case.
-- Verified synthesized designs using Yosys and GTKWave.
-
----
-
-## Conclusion
-
-Module 4 provided practical understanding of Gate-Level Simulation and synthesis-simulation mismatch.
-
-The module covered GLS using Icarus Verilog, waveform analysis using GTKWave, functional and timing verification, and common causes of synthesis-simulation mismatch.
-
-Two mismatch cases and one matching case were studied to understand the relationship between RTL simulation and synthesized gate-level simulation.
