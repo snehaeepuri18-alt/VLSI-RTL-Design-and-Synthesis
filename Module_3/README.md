@@ -62,8 +62,21 @@ Boolean optimization can result in:
 - Improved performance
 
 ---
-##opt_check codes
-![opt_check RTL Codes](opt_check_code.png)
+### RTL Code
+
+![Combinational Optimization RTL Code](opt_check_code.png)
+
+#### Yosys Optimization Result
+
+The following screenshots show the optimization results obtained during the synthesis process.
+
+![Optimization Result](opt_check_show.png)
+
+![Optimization Result – Example 2](opt_check2_show.png)
+
+![Optimization Result – Example 3](opt_check3_show.png)
+
+![Optimization Result – Example 4](opt_check4_show.png)
 
 
 # 4. Sequential Logic Optimization
@@ -134,6 +147,75 @@ However, cloning may increase:
 Therefore, it is used when the timing benefit justifies the additional hardware.
 
 ---
+## Sequential Constant Optimization
+
+Sequential constant optimization was demonstrated using D Flip-Flop based examples.
+
+The `dff_const` examples demonstrate how constant values in sequential logic can be identified and optimized while preserving the required functionality.
+
+### RTL Code
+
+![Sequential Optimization RTL Code](dff_const_code.png)
+![Sequential Optimization RTL Code](dff3_4.png)
+### DFF Constant Optimization – Example 1
+
+#### Yosys Optimization Result
+
+![DFF Constant Optimization 1 – Yosys](dff_const1_show.png)
+
+#### GTKWave Simulation
+
+![DFF Constant Optimization 1 – GTKWave](dff_const1.png)
+
+### DFF Constant Optimization – Example 2
+
+#### Yosys Optimization Result
+
+![DFF Constant Optimization 2 – Yosys](dff_const2_show.png)
+
+#### GTKWave Simulation
+
+![DFF Constant Optimization 2 – GTKWave](dff_const2.png)
+
+### DFF Constant Optimization – Example 3
+
+#### Yosys Optimization Result
+
+![DFF Constant Optimization 3 – Yosys](dff_const3_show.png)
+
+#### GTKWave Simulation
+
+![DFF Constant Optimization 3 – GTKWave](dff_const3_wave.png)
+
+### DFF Constant Optimization – Example 4
+
+#### Yosys Optimization Result
+
+![DFF Constant Optimization 4 – Yosys](dff_const4_show.png)
+
+#### GTKWave Simulation
+
+![DFF Constant Optimization 4 – GTKWave](dff_const4_wave.png)
+
+### DFF Constant Optimization – Example 5
+
+#### Yosys Optimization Result
+
+![DFF Constant Optimization 5 – Yosys](dff_const5_show.png)
+
+#### GTKWave Simulation
+
+![DFF Constant Optimization 5 – GTKWave](dff_const5_wave.png)
+
+### Multiple Modules Optimization – Example 5
+
+#### Yosys Optimization Result - Example 1
+
+![Multiple_module Optimization – Yosys](multiple_module_opt_show.png)
+
+#### Yosys Optimization Result - Example 2
+
+![Multiple module Optimization – Yosys](multiple_module_opt2_show.png)
 
 # 7. Optimization Objectives
 
