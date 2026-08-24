@@ -1,4 +1,5 @@
-# Module 3 – Logic Optimization
+# Module 3 – Combinational and sequential optmizations
+
 
 ## Overview
 
