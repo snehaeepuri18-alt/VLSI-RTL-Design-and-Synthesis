@@ -215,7 +215,7 @@ The `dff_const` examples demonstrate how constant values in sequential logic can
 
 #### Yosys Optimization Result - Example 2
 
-![Multiple module Optimization – Yosys](multiple_module_opt2_show.png)
+![Multiple module Optimization – Yosys](multiple_modules_opt2_show.png)
 
 # 7. Optimization Objectives
 
