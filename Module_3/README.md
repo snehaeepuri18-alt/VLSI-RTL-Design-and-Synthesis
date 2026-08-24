@@ -62,7 +62,7 @@ Boolean optimization can result in:
 - Improved performance
 
 ---
-#opt_check codes
+##opt_check codes
 ![opt_check RTL Codes](opt_check_code.png)
 
 
