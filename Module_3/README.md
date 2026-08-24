@@ -74,7 +74,7 @@ The following screenshots show the optimization results obtained during the synt
 
 ![Optimization Result – Example 2](opt_check2_show.png)
 
-![Optimization Result – Example 3](opt_check3_show.png)
+![Optimization Result – Example 3](opt_chech3_show.png)
 
 ![Optimization Result – Example 4](opt_check4_show.png)
 
