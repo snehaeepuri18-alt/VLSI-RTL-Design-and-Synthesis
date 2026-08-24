@@ -229,11 +229,11 @@ The RTL correctly described the intended hardware, and the synthesized netlist p
 
 ### Yosys Result
 
-![Matching Case – Yosys](ternary_mux_show.png)
+![Matching Case – Yosys](gls_ternery_mux.png)
 
 ### GTKWave Waveform
 
-![Matching Case – GTKWave](gls_ternary_mux.png)
+![Matching Case – GTKWave](gls_ternery_mux.png)
 
 ### Observation
 
