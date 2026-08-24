@@ -247,6 +247,10 @@ This helps avoid unintended latch inference.
 ### GTKWave Waveform
 
 ![ Case 2 – GTKWave](incomp_case_wave.png)
+
+### GTKWave Waveform
+
+![ GTKWave](bad_case_wave.png)
 ---
 
 ## 6. Partial Assignment in Case Statements
