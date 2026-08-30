@@ -302,6 +302,7 @@ GTKWave
      |
      v
 RTL vs GLS Verification
+```
 
 # RTL vs GLS Comparison
 
