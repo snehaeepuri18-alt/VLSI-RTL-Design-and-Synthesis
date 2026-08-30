@@ -261,7 +261,7 @@ The comparison was used to verify whether the synthesized implementation preserv
 
 ### Pre-Synthesis vs Post-Synthesis Waveform
 
-![RTL and GLS Matching Waveform](pre_posy_wave.png)
+![RTL vs GLS Waveform Matching](pre_posy_wave.png)
 
 The important functional behavior was preserved after synthesis.
 
