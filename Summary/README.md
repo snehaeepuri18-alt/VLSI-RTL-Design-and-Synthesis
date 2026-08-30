@@ -142,7 +142,7 @@ The design hierarchy and connections between the major blocks were examined befo
 
 ### RVMYTH and VSDBabySoC
 
-![RVMYTH and VSDBabySoC](rvmyth_babysoc.png)
+![RVMYTH and VSDBabySoC](rvmyth_babaysoc.png)
 
 ---
 
@@ -178,7 +178,7 @@ The synthesis process included:
 
 ### Synthesis Result
 
-![VSDBabySoC Synthesis](synth_babysoc.png)
+![VSDBabySoC Synthesis](synth_vsdbabysoc.png)
 
 ---
 
@@ -190,7 +190,7 @@ The statistics provided information about the cells present in the synthesized d
 
 ### Yosys Synthesis Statistics
 
-![VSDBabySoC Synthesis Statistics](stats_babysoc.png)
+![VSDBabySoC Synthesis Statistics](sats_babysoc.png)
 
 ---
 
