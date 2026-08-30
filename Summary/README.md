@@ -138,11 +138,11 @@ The design hierarchy and connections between the major blocks were examined befo
 
 ### RVMYTH
 
-![RVMYTH](Summary/VSDBabySoC/screenshots/rvmyth.png)
+![RVMYTH](rvmyth.png)
 
 ### RVMYTH and VSDBabySoC
 
-![RVMYTH and VSDBabySoC](Summary/VSDBabySoC/screenshots/rvmyth_babysoc.png)
+![RVMYTH and VSDBabySoC](rvmyth_babysoc.png)
 
 ---
 
@@ -156,7 +156,7 @@ The waveform was analyzed to verify the functional behavior of the RTL before sy
 
 ### Pre-Synthesis GTKWave
 
-![Pre-Synthesis RTL Simulation](Summary/VSDBabySoC/screenshots/rvtodac.png)
+![Pre-Synthesis RTL Simulation](rvtodac.png)
 
 ---
 
@@ -178,7 +178,7 @@ The synthesis process included:
 
 ### Synthesis Result
 
-![VSDBabySoC Synthesis](Summary/VSDBabySoC/screenshots/synth_babysoc.png)
+![VSDBabySoC Synthesis](synth_babysoc.png)
 
 ---
 
@@ -190,7 +190,7 @@ The statistics provided information about the cells present in the synthesized d
 
 ### Yosys Synthesis Statistics
 
-![VSDBabySoC Synthesis Statistics](Summary/VSDBabySoC/screenshots/stats_babysoc.png)
+![VSDBabySoC Synthesis Statistics](stats_babysoc.png)
 
 ---
 
@@ -202,11 +202,11 @@ The generated cells and mapped netlist were examined after synthesis.
 
 ### ABC Cell Information
 
-![ABC Cells](Summary/VSDBabySoC/screenshots/abc_cells.png)
+![ABC Cells](abc_cells.png)
 
 ### ABC Netlist
 
-![ABC Netlist](Summary/VSDBabySoC/screenshots/abc_netlist.png)
+![ABC Netlist](abc_netlist.png)
 
 ---
 
@@ -218,11 +218,11 @@ The schematic provided a graphical representation of the synthesized hardware an
 
 ### BabySoC Schematic
 
-![BabySoC Schematic](Summary/VSDBabySoC/screenshots/babysoc_show.png)
+![BabySoC Schematic](babysoc_show.png)
 
 ### VSDBabySoC Schematic
 
-![VSDBabySoC Schematic](Summary/VSDBabySoC/screenshots/vsdbabysoc_show.png)
+![VSDBabySoC Schematic](vsdbabysoc_show.png)
 
 ---
 
@@ -261,7 +261,7 @@ The comparison was used to verify whether the synthesized implementation preserv
 
 ### Pre-Synthesis vs Post-Synthesis Waveform
 
-![RTL vs GLS Matching Waveform](Summary/VSDBabySoC/screenshots/pre_post_wave.png)
+![RTL vs GLS Matching Waveform](pre_posy_wave.png)
 
 The important functional behavior was preserved after synthesis.
 
