@@ -328,10 +328,12 @@ Functional behavior before synthesis
 
 GLS:
 Functional behavior after synthesis with standard-cell implementation effects
+```
 
 The matching waveform confirms that the synthesized implementation preserved the required functional behavior for the tested design.
 
-```
+---
+
 
 # VSDBabySoC Screenshots
 
