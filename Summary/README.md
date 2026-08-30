@@ -244,7 +244,6 @@ The correct Sky130 standard-cell Verilog model was included during compilation.
 
 The `UNIT_DELAY` macro was also defined for the functional cell models.
 
-```text
 -DUNIT_DELAY=#1
 
 During the process, a compilation issue occurred because the required Sky130 Verilog model was initially referenced from an incorrect path.
