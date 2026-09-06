@@ -1,0 +1,1514 @@
+# Module 1 – Introduction to RTL Design and ASIC Flow
+
+## 1. QFN-48
+
+QFN stands for **Quad Flat No-lead**.
+
+QFN-48 is a semiconductor package with 48 external electrical connections. It is used to connect the silicon die inside the package to the external PCB.
+
+### Key Points
+
+- QFN = Quad Flat No-lead
+- 48 = Number of external connections
+- The package does not have long leads extending from the sides.
+- It provides good electrical and thermal performance.
+- The silicon die is placed inside the package.
+
+---
+
+## 2. Pads
+
+A **pad** is a physical connection point on a chip.
+
+Pads provide the interface between the internal circuitry and the external package connections.
+
+### Functions of Pads
+
+- Connect the chip to the package.
+- Provide input and output connections.
+- Supply power and ground.
+- Allow signals to enter and leave the chip.
+
+### Basic Structure
+
+    External Pin
+         |
+         v
+        PAD
+         |
+         v
+    Internal Circuit
+
+---
+
+## 3. Core
+
+The **core** is the main area of the chip where the internal digital circuitry is placed.
+
+It contains the logic required to implement the design.
+
+### The Core Can Contain
+
+- Standard cells
+- Flip-flops
+- Combinational logic
+- Clock circuitry
+- Memories
+- Other functional blocks
+
+The core is surrounded by the input/output interface and other physical structures.
+
+---
+
+## 4. Die
+
+The **die** is the actual piece of semiconductor material containing the integrated circuit.
+
+It is usually made from silicon.
+
+The die can contain:
+
+- Core
+- I/O cells
+- Pads
+- Standard cells
+- Macros
+- Interconnections
+
+### Basic Relationship
+
+    Package
+       |
+       v
+      Die
+       |
+       +---- Core
+       |
+       +---- I/O
+       |
+       +---- Pads
+       |
+       +---- Macros
+
+---
+
+## 5. Macros
+
+A **macro** is a relatively large pre-designed block used inside an integrated circuit.
+
+Macros are generally more complex than standard cells.
+
+### Examples
+
+- SRAM
+- ROM
+- PLL
+- ADC
+- DAC
+- Large IP blocks
+
+Macros are generally treated as physical blocks during floorplanning.
+
+---
+
+# RISC-V
+
+## 6. What is RISC-V?
+
+**RISC-V** is an open-standard Instruction Set Architecture (ISA).
+
+It is based on the **Reduced Instruction Set Computer (RISC)** concept.
+
+RISC-V defines the instructions that a processor can execute.
+
+### Important Points
+
+- RISC-V is an ISA, not a processor itself.
+- It is an open standard.
+- Different companies and designers can implement RISC-V processors.
+- It can be used for microcontrollers, CPUs, SoCs and custom processors.
+- It supports modular instruction extensions.
+
+---
+
+## 7. What is ISA?
+
+ISA stands for **Instruction Set Architecture**.
+
+It defines the interface between software and processor hardware.
+
+An ISA specifies:
+
+- Instructions
+- Registers
+- Data types
+- Memory operations
+- Addressing modes
+- Instruction formats
+- Exception and privilege behavior
+
+### Example
+
+    ADD x1, x2, x3
+
+The ISA defines what this instruction means.
+
+The processor hardware then implements that instruction.
+
+---
+
+## 8. RISC-V Extensions
+
+RISC-V uses a modular architecture.
+
+The base integer instruction set can be combined with additional extensions.
+
+### Common Extensions
+
+    I  -> Base integer instruction set
+    M  -> Integer multiplication and division
+    A  -> Atomic instructions
+    F  -> Single-precision floating point
+    D  -> Double-precision floating point
+    C  -> Compressed instructions
+    B  -> Bit manipulation
+    V  -> Vector operations
+
+### Example
+
+    RV32IM
+
+means:
+
+    RV32 -> 32-bit RISC-V architecture
+    I    -> Integer instructions
+    M    -> Multiply and divide instructions
+
+---
+
+# Software to Hardware
+
+## 9. Software-to-Hardware Flow
+
+A high-level software application eventually needs to execute on hardware.
+
+A simplified flow is:
+
+    Application Software
+            |
+            v
+    Programming Language
+            |
+            v
+         Compiler
+            |
+            v
+    Assembly / Machine Instructions
+            |
+            v
+    Instruction Set Architecture
+            |
+            v
+      Processor Hardware
+            |
+            v
+        Digital Logic
+            |
+            v
+         Transistors
+
+The ISA acts as an interface between software and processor implementation.
+
+---
+
+# SoC
+
+## 10. What is SoC?
+
+SoC stands for **System on Chip**.
+
+An SoC integrates multiple components of a complete system onto a single chip.
+
+### An SoC May Contain
+
+- CPU
+- Memory
+- GPIO
+- Timers
+- UART
+- SPI
+- I2C
+- Interrupt controller
+- Bus interconnect
+- Analog blocks
+- Other IP blocks
+
+### Simplified SoC
+
+    +----------------------------------+
+    |               SoC                |
+    |                                  |
+    |   +-------+      +----------+   |
+    |   |  CPU  |------|  Memory  |   |
+    |   +-------+      +----------+   |
+    |       |                          |
+    |       v                          |
+    |   +---------+                    |
+    |   |   Bus   |                    |
+    |   +---------+                    |
+    |    |   |   |                     |
+    |    v   v   v                     |
+    |  UART GPIO  SPI                  |
+    |                                  |
+    +----------------------------------+
+
+---
+
+## 11. SoC Design Using OpenLane
+
+OpenLane can be used to take a digital design from RTL to a physical chip layout.
+
+A simplified flow is:
+
+    RTL Design
+        |
+        v
+    Synthesis
+        |
+        v
+    Floorplanning
+        |
+        v
+    Power Planning
+        |
+        v
+    Placement
+        |
+        v
+    Clock Tree Synthesis
+        |
+        v
+    Routing
+        |
+        v
+    Parasitic Extraction
+        |
+        v
+    Static Timing Analysis
+        |
+        v
+    Physical Verification
+        |
+        v
+    GDSII
+
+---
+
+# Open-Source VLSI Ecosystem
+
+## 12. Open-Source VLSI Tools
+
+The open-source VLSI ecosystem provides tools for different stages of digital IC design.
+
+### RTL Simulation and Verification
+
+- Icarus Verilog
+- Verilator
+
+### Logic Synthesis
+
+- Yosys
+
+### Physical Design
+
+- OpenROAD
+
+### Timing Analysis
+
+- OpenSTA
+
+### Physical Verification and Layout
+
+- Magic
+- Netgen
+- KLayout
+
+These tools can be combined to create an open-source ASIC design flow.
+
+---
+
+# RTL Tools
+
+## 13. Icarus Verilog
+
+**Icarus Verilog** is an open-source Verilog simulation and compilation tool.
+
+It can be used to:
+
+- Compile Verilog code
+- Run simulations
+- Test RTL designs
+- Generate waveform files such as VCD
+
+### Basic Flow
+
+    Verilog RTL
+         |
+         v
+    Icarus Verilog
+         |
+         v
+     Simulation
+         |
+         v
+     VCD Waveform
+
+---
+
+## 14. Verilator
+
+**Verilator** is an open-source Verilog/SystemVerilog simulator and linting tool.
+
+It converts HDL designs into optimized models that can be simulated efficiently.
+
+It is widely used for:
+
+- RTL simulation
+- Linting
+- Verification
+- High-speed simulation
+
+---
+
+# Logic Synthesis
+
+## 15. Yosys
+
+**Yosys** is an open-source framework for RTL synthesis.
+
+It converts RTL code into a gate-level representation.
+
+### Basic Flow
+
+    RTL Verilog
+         |
+         v
+       Yosys
+         |
+         v
+    Gate-Level Netlist
+
+Yosys performs operations such as:
+
+- RTL elaboration
+- Logic optimization
+- Technology mapping
+- Netlist generation
+
+---
+
+# Physical Design Tools
+
+## 16. OpenROAD
+
+**OpenROAD** is an open-source digital physical design toolchain.
+
+It performs major physical design tasks such as:
+
+- Floorplanning
+- Placement
+- Clock Tree Synthesis
+- Routing
+- Optimization
+
+---
+
+## 17. OpenSTA
+
+**OpenSTA** is an open-source Static Timing Analysis tool.
+
+STA is used to determine whether the design satisfies timing requirements.
+
+It analyzes:
+
+- Setup timing
+- Hold timing
+- Clock paths
+- Data paths
+- Timing violations
+
+---
+
+## 18. Magic
+
+**Magic** is an open-source VLSI layout tool.
+
+It can be used for:
+
+- Layout viewing
+- Layout editing
+- Design Rule Checking
+- Physical verification
+
+---
+
+## 19. Netgen
+
+**Netgen** is used for netlist comparison and LVS-related verification.
+
+LVS stands for:
+
+**Layout Versus Schematic**
+
+It checks whether the extracted layout corresponds to the intended circuit/netlist.
+
+---
+
+## 20. KLayout
+
+**KLayout** is a layout viewer and editor.
+
+It supports common IC layout formats such as:
+
+- GDS
+- OASIS
+
+It can also be used for:
+
+- Layout inspection
+- Visualization
+- DRC
+- Layout analysis
+
+---
+
+# PDK
+
+## 21. What is PDK?
+
+PDK stands for **Process Design Kit**.
+
+A PDK provides the information and files required to design integrated circuits for a particular semiconductor manufacturing process.
+
+It acts as an interface between the foundry process and EDA design tools.
+
+---
+
+## 22. What Does a PDK Contain?
+
+A PDK can contain:
+
+- Technology files
+- Design rules
+- Standard cell libraries
+- Timing libraries
+- SPICE models
+- Layer information
+- Parasitic information
+- DRC rules
+- LVS rules
+- Extraction rules
+- Process information
+- Device models
+
+---
+
+## 23. Why is a PDK Important?
+
+The PDK allows designers to create a design that can actually be manufactured using a particular process.
+
+Without the required process information, EDA tools cannot correctly understand:
+
+- Available layers
+- Design rules
+- Device characteristics
+- Cell characteristics
+- Manufacturing constraints
+
+Therefore, the PDK is a critical part of the ASIC design flow.
+
+---
+
+## 24. Who Invented the PDK?
+
+There is **no single inventor of the PDK**.
+
+The concept evolved as semiconductor foundries and EDA companies developed standardized ways of providing process information to IC designers.
+
+Today, PDKs are generally developed and maintained by semiconductor foundries or technology providers, often with support from EDA vendors and IP/library providers.
+
+---
+
+# Technology Node
+
+## 25. What is 130 nm?
+
+**130 nm** refers to a semiconductor manufacturing technology node.
+
+It is an older process technology compared with modern nodes such as:
+
+    90 nm
+    65 nm
+    45 nm
+    28 nm
+    16 nm
+    7 nm
+    5 nm
+
+The historical node name was associated with characteristic process dimensions, but modern technology-node names should not be interpreted as a literal measurement of every transistor dimension.
+
+---
+
+## 26. Is 130 nm Fast?
+
+The process node alone does not determine whether a chip is fast.
+
+Performance depends on several factors:
+
+- Circuit architecture
+- Standard cell libraries
+- Supply voltage
+- Transistor characteristics
+- Clock frequency
+- Interconnect delay
+- Load capacitance
+- Physical implementation
+- Temperature
+- Power constraints
+
+130 nm is an older technology, but it is still useful for:
+
+- Education
+- Research
+- Analog circuits
+- Mixed-signal designs
+- Low-cost applications
+- Mature industrial applications
+
+---
+
+# ASIC DESIGN FLOW
+
+## 27. Complete ASIC Design Flow
+
+A typical digital ASIC design flow is:
+
+    Specification
+          |
+          v
+    Architecture
+          |
+          v
+    RTL Design
+          |
+          v
+    Functional Verification
+          |
+          v
+    Logic Synthesis
+          |
+          v
+    Floorplanning
+          |
+          v
+    Power Planning
+          |
+          v
+    Placement
+          |
+          v
+    Clock Tree Synthesis
+          |
+          v
+    Routing
+          |
+          v
+    Parasitic Extraction
+          |
+          v
+    Static Timing Analysis
+          |
+          v
+    Physical Verification
+          |
+          v
+    Signoff
+          |
+          v
+    GDSII
+          |
+          v
+    Fabrication
+
+---
+
+## 28. Specification
+
+The first stage is defining what the chip should do.
+
+The specification describes:
+
+- Required functionality
+- Inputs
+- Outputs
+- Performance requirements
+- Power requirements
+- Area requirements
+- Operating conditions
+
+---
+
+## 29. Architecture
+
+The architecture defines how the required functionality will be implemented.
+
+It determines:
+
+- Major blocks
+- Data paths
+- Control logic
+- Memory requirements
+- Communication interfaces
+- Clocking structure
+
+### Example
+
+    CPU
+     |
+     +---- Memory
+     |
+     +---- UART
+     |
+     +---- GPIO
+     |
+     +---- SPI
+
+---
+
+## 30. RTL Design
+
+RTL stands for **Register Transfer Level**.
+
+RTL describes the behavior and structure of a digital circuit using HDLs such as:
+
+- Verilog
+- SystemVerilog
+- VHDL
+
+RTL describes:
+
+- Registers
+- Combinational logic
+- Sequential logic
+- Data transfers
+- Control logic
+
+### Example
+
+    always @(posedge clk)
+        q <= d;
+
+This describes a flip-flop.
+
+---
+
+# Functional Verification
+
+## 31. Functional Verification
+
+Functional verification checks whether the RTL behaves according to the specification.
+
+Simulation is commonly used.
+
+### Basic Flow
+
+    RTL
+     |
+     v
+    Testbench
+     |
+     v
+    Simulation
+     |
+     v
+    Waveform
+     |
+     v
+    Check Results
+
+Common simulation tools include:
+
+- Icarus Verilog
+- Verilator
+
+---
+
+# Logic Synthesis
+
+## 32. Logic Synthesis
+
+Logic synthesis converts RTL into a gate-level netlist.
+
+    RTL
+     |
+     v
+    Synthesis Tool
+     |
+     v
+    Gate-Level Netlist
+
+The synthesis tool maps the design to available standard cells.
+
+### Example Cells
+
+- AND
+- OR
+- NOT
+- MUX
+- DFF
+- NAND
+- NOR
+
+Yosys is commonly used for open-source synthesis.
+
+---
+
+# Physical Design
+
+## 33. Floorplanning
+
+Floorplanning determines the physical organization of the chip.
+
+It defines:
+
+- Die size
+- Core size
+- Macro locations
+- I/O locations
+- Initial placement regions
+
+### Simplified Representation
+
+    +---------------------------+
+    |           DIE             |
+    | +-----------------------+ |
+    | |         CORE          | |
+    | |                       | |
+    | |  MACRO      MACRO     | |
+    | |                       | |
+    | |       STANDARD CELLS  | |
+    | +-----------------------+ |
+    +---------------------------+
+
+---
+
+## 34. Power Planning
+
+Power planning creates the power distribution network.
+
+It provides:
+
+- VDD
+- VSS/GND
+- Power rings
+- Power straps
+- Power connections
+
+The goal is to distribute power reliably throughout the chip.
+
+---
+
+## 35. Placement
+
+Placement determines the physical locations of standard cells.
+
+The placement process tries to achieve:
+
+- Good timing
+- Low wirelength
+- Low congestion
+- Efficient area utilization
+
+### Basic Flow
+
+    Before Placement
+           |
+           v
+       Unplaced Cells
+           |
+           v
+        Placement
+           |
+           v
+    Cells at Physical Locations
+
+---
+
+## 36. Clock Tree Synthesis
+
+Clock Tree Synthesis is abbreviated as **CTS**.
+
+CTS creates a clock distribution network from the clock source to sequential elements.
+
+The goal is to control:
+
+- Clock skew
+- Clock latency
+- Clock transition
+- Clock buffering
+
+### Simplified Clock Tree
+
+                Clock
+                  |
+                Buffer
+               /      \
+           Buffer    Buffer
+           /   \      /   \
+         FF    FF    FF    FF
+
+---
+
+## 37. Routing
+
+Routing creates physical wires connecting the placed cells.
+
+Routing is generally performed in two stages:
+
+- Global Routing
+- Detailed Routing
+
+### Basic Flow
+
+    Placement
+        |
+        v
+    Global Routing
+        |
+        v
+    Detailed Routing
+        |
+        v
+    Physical Connections
+
+The goal is to create legal and efficient connections while following design rules.
+
+---
+
+# Timing and Parasitics
+
+## 38. Parasitic Extraction
+
+Physical wires introduce parasitic effects such as:
+
+- Resistance
+- Capacitance
+
+These parasitics affect circuit timing.
+
+Parasitic extraction determines these values from the physical layout.
+
+### Basic Flow
+
+    Layout
+      |
+      v
+    Parasitic Extraction
+      |
+      v
+    RC Information
+
+---
+
+## 39. Static Timing Analysis
+
+**STA** stands for Static Timing Analysis.
+
+STA checks whether signals can propagate through the circuit within the required timing limits.
+
+Important timing concepts include:
+
+- Setup time
+- Hold time
+- Clock period
+- Clock skew
+- Propagation delay
+- Slack
+
+### Timing Result
+
+    Positive Slack
+          |
+          v
+      Timing Met
+
+    Negative Slack
+          |
+          v
+    Timing Violation
+
+---
+
+# Physical Verification
+
+## 40. Design Rule Checking
+
+**DRC** stands for Design Rule Check.
+
+DRC checks whether the physical layout follows manufacturing design rules.
+
+Examples:
+
+- Minimum spacing
+- Minimum width
+- Via rules
+- Layer rules
+- Enclosure rules
+
+---
+
+## 41. LVS
+
+**LVS** stands for **Layout Versus Schematic**.
+
+LVS compares the physical layout with the intended circuit/netlist.
+
+The purpose is to verify that the layout represents the correct circuit.
+
+### Basic Flow
+
+    Layout
+       |
+       v
+    Extracted Netlist
+       |
+       v
+      Compare
+       ^
+       |
+    Reference Netlist
+
+---
+
+## 42. Antenna Checking
+
+During manufacturing, long metal connections can cause antenna-related problems.
+
+Antenna checking identifies structures that may violate antenna rules.
+
+Antenna violations must be corrected before final signoff.
+
+---
+
+# Signoff
+
+## 43. Signoff
+
+Signoff is the final verification stage before the design is sent for manufacturing.
+
+Typical signoff checks include:
+
+- Timing
+- DRC
+- LVS
+- Antenna
+- Power
+- Design integrity
+- Other process-specific checks
+
+Only after the design passes the required checks is it considered ready for fabrication.
+
+---
+
+# GDSII
+
+## 44. What is GDSII?
+
+**GDSII** is a file format used to represent the physical layout of an integrated circuit.
+
+It contains information about the geometry of the layout, including:
+
+- Metal shapes
+- Polysilicon
+- Diffusion
+- Contacts
+- Vias
+- Other physical layers
+
+The final layout database can be used as part of the manufacturing process.
+
+### Basic Flow
+
+    RTL
+     |
+     v
+    Synthesis
+     |
+     v
+    Physical Design
+     |
+     v
+    Verification
+     |
+     v
+    GDSII
+     |
+     v
+    Fabrication
+
+---
+
+# OpenLane
+
+## 45. What is OpenLane?
+
+**OpenLane** is an open-source automated RTL-to-GDSII flow.
+
+It integrates multiple open-source tools to automate digital ASIC implementation.
+
+### Simplified OpenLane Flow
+
+    RTL
+     |
+     v
+    Synthesis
+     |
+     v
+    Floorplan
+     |
+     v
+    Placement
+     |
+     v
+    CTS
+     |
+     v
+    Routing
+     |
+     v
+    Extraction
+     |
+     v
+    STA
+     |
+     v
+    DRC / LVS / Antenna
+     |
+     v
+    GDSII
+
+---
+
+## 46. Why Use OpenLane?
+
+OpenLane is useful because it combines multiple design tools into a common flow.
+
+### Advantages
+
+- Open-source
+- Automated RTL-to-GDS flow
+- Reproducible flow
+- Supports open-source PDKs
+- Useful for education and research
+- Provides physical design automation
+- Enables experimentation with ASIC designs
+
+---
+
+## 47. OpenLane Features
+
+Important features include:
+
+- RTL synthesis
+- Floorplanning
+- Placement
+- Clock Tree Synthesis
+- Routing
+- Timing analysis
+- Physical verification
+- Design optimization
+- PPA evaluation
+- GDSII generation
+
+---
+
+## 48. OpenLane Tool Flow
+
+A simplified tool relationship is:
+
+                    RTL
+                     |
+                     v
+                   Yosys
+                     |
+                     v
+              Gate-Level Netlist
+                     |
+                     v
+                 OpenROAD
+                     |
+          +----------+----------+
+          |          |          |
+          v          v          v
+      Floorplan  Placement    CTS
+          |          |          |
+          +----------+----------+
+                     |
+                     v
+                  Routing
+                     |
+                     v
+               Physical Layout
+                     |
+          +----------+----------+
+          |          |          |
+          v          v          v
+        Magic     Netgen     OpenSTA
+          |          |          |
+          +----------+----------+
+                     |
+                     v
+                   GDSII
+
+The exact tool versions and flow stages can vary depending on the OpenLane version and configuration.
+
+---
+
+# Design Space Exploration
+
+## 49. What is Design Space Exploration?
+
+**Design Space Exploration (DSE)** means trying different design and implementation configurations to find a better result.
+
+Different parameters can affect:
+
+- Power
+- Performance
+- Area
+
+The objective is to find a suitable **PPA trade-off**.
+
+---
+
+## 50. PPA
+
+PPA stands for:
+
+    P -> Power
+    P -> Performance
+    A -> Area
+
+A design may be optimized to:
+
+- Reduce power
+- Improve performance
+- Reduce area
+
+However, improving one parameter can sometimes negatively affect another.
+
+Therefore, designers need to find a suitable balance.
+
+---
+
+## 51. Importance of DSE
+
+DSE helps designers understand how implementation parameters affect the final chip.
+
+For example:
+
+    Configuration A
+    Power       -> Higher
+    Performance -> Lower
+    Area        -> Smaller
+
+    Configuration B
+    Power       -> Lower
+    Performance -> Higher
+    Area        -> Larger
+
+The designer can compare multiple configurations and select an appropriate solution.
+
+---
+
+# Design Examples
+
+## 52. Multiple Design Examples
+
+A large number of RTL designs can be used to study synthesis and physical implementation.
+
+Examples include:
+
+- Multiplexers
+- Flip-flops
+- Counters
+- Adders
+- ALUs
+- Arithmetic circuits
+- Control circuits
+- Processor blocks
+
+Studying multiple designs helps understand how RTL coding style affects synthesis and physical implementation.
+
+---
+
+# Relationship Between Major Concepts
+
+## 53. RISC-V, SoC, PDK and OpenLane
+
+These concepts are connected in an ASIC design flow.
+
+    RISC-V
+       |
+       v
+    Processor / IP
+       |
+       v
+      SoC
+       |
+       v
+    RTL Design
+       |
+       v
+    OpenLane
+       |
+       v
+    PDK + Standard Cell Libraries
+       |
+       v
+    Physical Design
+       |
+       v
+      GDSII
+       |
+       v
+    Fabrication
+
+### RISC-V
+
+Defines the instruction set architecture.
+
+### SoC
+
+Combines processors, memories, peripherals and other blocks into one system.
+
+### RTL
+
+Describes the digital hardware.
+
+### PDK
+
+Provides process-specific information required for implementation and manufacturing.
+
+### OpenLane
+
+Automates the RTL-to-GDSII physical implementation flow.
+
+### GDSII
+
+Represents the final physical layout database.
+
+---
+
+# Complete ASIC Concept
+
+## 54. From Idea to Chip
+
+The complete concept can be summarized as:
+
+    System Requirement
+            |
+            v
+       Architecture
+            |
+            v
+    RISC-V / IP / Digital Blocks
+            |
+            v
+         RTL Design
+            |
+            v
+    Functional Verification
+            |
+            v
+      Logic Synthesis
+            |
+            v
+    Gate-Level Netlist
+            |
+            v
+       Floorplanning
+            |
+            v
+       Power Planning
+            |
+            v
+         Placement
+            |
+            v
+    Clock Tree Synthesis
+            |
+            v
+          Routing
+            |
+            v
+    Parasitic Extraction
+            |
+            v
+    Static Timing Analysis
+            |
+            v
+    DRC / LVS / Antenna
+            |
+            v
+         Signoff
+            |
+            v
+          GDSII
+            |
+            v
+       Fabrication
+            |
+            v
+       Physical Chip
+
+---
+
+# Key Takeaways
+
+## 55. Important Points
+
+### Semiconductor Structure
+
+    Package
+       |
+       v
+      Die
+       |
+       v
+    Core + I/O + Macros + Pads
+
+### RISC-V
+
+    RISC-V = Open Instruction Set Architecture
+
+### SoC
+
+    SoC = Multiple system components integrated on one chip
+
+### PDK
+
+    PDK = Process Design Kit
+
+It provides technology and design information required for a specific manufacturing process.
+
+### RTL
+
+    RTL = Register Transfer Level
+
+It describes digital hardware behavior and structure.
+
+### Synthesis
+
+    RTL -> Gate-Level Netlist
+
+### Physical Design
+
+    Netlist
+       |
+       v
+    Floorplan
+       |
+       v
+    Power Planning
+       |
+       v
+    Placement
+       |
+       v
+    CTS
+       |
+       v
+    Routing
+
+### Verification
+
+    STA
+    DRC
+    LVS
+    Antenna
+
+are important checks before final signoff.
+
+### Final Output
+
+    GDSII
+
+represents the physical chip layout used toward manufacturing.
+
+---
+
+# Final Summary
+
+Module 1 introduced the complete digital ASIC design ecosystem, from semiconductor packaging and chip structures to RTL design and physical implementation.
+
+The major concepts covered are:
+
+1. QFN-48 and semiconductor packaging
+2. Pads, core, die and macros
+3. RISC-V and Instruction Set Architecture
+4. RISC-V instruction extensions
+5. Software-to-hardware flow
+6. System on Chip architecture
+7. Open-source VLSI tools
+8. RTL simulation using Icarus Verilog and Verilator
+9. Logic synthesis using Yosys
+10. Physical design using OpenROAD
+11. Static Timing Analysis using OpenSTA
+12. Layout and verification using Magic, Netgen and KLayout
+13. Process Design Kit (PDK)
+14. 130 nm technology
+15. Complete ASIC design flow
+16. Floorplanning and power planning
+17. Placement and Clock Tree Synthesis
+18. Routing and parasitic extraction
+19. Static Timing Analysis
+20. DRC, LVS and antenna checking
+21. Signoff
+22. GDSII
+23. OpenLane RTL-to-GDSII flow
+24. Design Space Exploration
+25. Power, Performance and Area optimization
+
+## Overall ASIC Flow
+
+    Specification
+          ↓
+    Architecture
+          ↓
+    RTL
+          ↓
+    Verification
+          ↓
+    Synthesis
+          ↓
+    Floorplan
+          ↓
+    Power Planning
+          ↓
+    Placement
+          ↓
+    CTS
+          ↓
+    Routing
+          ↓
+    Extraction
+          ↓
+    STA
+          ↓
+    DRC / LVS / Antenna
+          ↓
+    Signoff
+          ↓
+    GDSII
+          ↓
+    Fabrication
