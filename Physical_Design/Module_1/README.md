@@ -176,7 +176,7 @@ The required library reference and technology files used for the design flow are
 
 The configuration file used for setting up the design flow is shown below.
 
-![Configuration File](config.tcl _file.png)
+![Configuration File](config.tcl_file.png)
 
 ---
 
