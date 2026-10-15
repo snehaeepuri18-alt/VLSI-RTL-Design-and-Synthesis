@@ -56,11 +56,11 @@ Routing establishes the physical interconnections between cells. Global routing 
 
 The routing stage was completed as part of this project.
 
-![VSDBabySoC Routing](routing_vsdbabysoc3.png)
+![VSDBabySoC Routing1](routing_vsdbabysoc3.png)
 
-![VSDBabySoC Routing](routing_vsdbabysoc2.png)
+![VSDBabySoC Routing2](routing_vsdbabysoc2.png)
 
-![VSDBabySoC Routing](routing_vsdbabysoc4_.png)
+![VSDBabySoC Routing3](routing_vsdbabysoc4_.png)
 
 ## 4. Static Timing Analysis (STA)
 
