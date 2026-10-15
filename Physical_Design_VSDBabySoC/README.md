@@ -36,19 +36,19 @@ The implementation follows the major stages of the physical-design flow.
 
 Floorplanning establishes the die and core regions and prepares the design for subsequent physical implementation.
 
-![VSDBabySoC Floorplanning](01_floorplanning.png)
+![VSDBabySoC Floorplanning](floor_plan_vsdbabysoc.png)
 
 ### 3.2 Placement
 
 Placement determines the physical locations of standard cells while considering placement constraints, timing, and wirelength.
 
-![VSDBabySoC Placement](02_placement.png)
+![VSDBabySoC Placement](placement_vsdbabysoc.png)
 
 ### 3.3 Clock-Tree Synthesis (CTS)
 
 Clock-tree synthesis constructs the clock distribution network to deliver clock signals to sequential elements while controlling clock skew and insertion delay.
 
-![VSDBabySoC Clock Tree Synthesis](03_cts.png)
+![VSDBabySoC Clock Tree Synthesis](cts_vsdbabysoc.png)
 
 ### 3.4 Routing
 
@@ -56,7 +56,11 @@ Routing establishes the physical interconnections between cells. Global routing 
 
 The routing stage was completed as part of this project.
 
-![VSDBabySoC Routing](04_routing.png)
+![VSDBabySoC Routing](routing_vsdbabysoc3.png)
+
+![VSDBabySoC Routing](routing_vsdbabysoc2.png)
+
+![VSDBabySoC Routing](routing_vsdbabysoc4_.png)
 
 ## 4. Static Timing Analysis (STA)
 
