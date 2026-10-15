@@ -60,7 +60,7 @@ The routing stage was completed as part of this project.
 
 ![VSDBabySoC Routing2](routing_vsdbabysoc2.png)
 
-![VSDBabySoC Routing3](routing_vsdbabysoc4_.png)
+![VSDBabySoC Routing3](routing_vasbabysoc4_.png)
 
 ## 4. Static Timing Analysis (STA)
 
