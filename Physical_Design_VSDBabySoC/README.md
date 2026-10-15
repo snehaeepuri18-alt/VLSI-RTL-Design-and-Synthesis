@@ -100,6 +100,25 @@ Analyzing multiple corners helps evaluate timing behavior across different opera
 
 The timing results should be recorded separately for each successfully analyzed corner, including setup slack, hold slack, and critical-path information.
 
+## Post-Route Static Timing Analysis (Post-STA)
+
+Post-route Static Timing Analysis was performed to evaluate the timing behavior of VSDBabySoC after routing.
+
+The analysis covers timing evaluation under selected Process, Voltage, and Temperature (PVT) corners, using the applicable timing libraries and design constraints.
+
+The detailed procedure and results are available in the post-STA report.
+
+**Post-STA Report:** [View Post-STA Documentation (PDF)](post_sta_doc.pdf)
+
+### Analysis Objectives
+
+- Evaluate setup and hold timing after routing.
+- Identify critical timing paths.
+- Examine timing slack across PVT corners.
+- Understand the impact of interconnect parasitics on timing.
+- Document the results of post-route timing analysis.
+
+
 ## 6. Implementation Outputs
 
 The physical-design flow may generate the following artifacts, depending on the configured stages and completed extraction steps:
