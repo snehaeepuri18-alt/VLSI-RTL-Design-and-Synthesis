@@ -159,3 +159,10 @@ The final assessment of the design should be based on verified implementation ou
 - [OpenROAD Documentation](https://openroad.readthedocs.io/)
 - [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA)
 - [SkyWater SKY130 PDK](https://github.com/google/skywater-pdk)
+
+
+## VSD Training Video
+
+This video presents my complete VSD training journey, covering RTL design and simulation, synthesis using Yosys, technology libraries, physical design, static timing analysis, and the VSDBabySoC project.
+
+**Training Video:** [Watch the complete VLSI training video](https://docs.google.com/videos/d/1MBbp9tZ70OoFjgE3b3Sqzzr7hIbNJe9LHcvmK30dMcI/play?usp=sharing)
