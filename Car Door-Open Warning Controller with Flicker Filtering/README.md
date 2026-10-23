@@ -576,5 +576,5 @@ All links in the tables below are relative to the directory containing this READ
 
 This video demonstrates my VLSI training project, including RTL design, simulation using GTKWave, synthesis using Yosys, static timing analysis, and the physical design flow.
 
-**Watch the complete project presentation:** [Click here to watch the video]([YOUR_VIDEO_LINK_HERE](https://docs.google.com/videos/d/15gZ3w8UIJuOG_leWDrT49OMDo6bcM69_WlkSp1JNoqI/play?usp=sharing))
+**Watch the complete project presentation:** [Click here to watch the video](https://docs.google.com/videos/d/15gZ3w8UIJuOG_leWDrT49OMDo6bcM69_WlkSp1JNoqI/play?usp=sharing)
 
