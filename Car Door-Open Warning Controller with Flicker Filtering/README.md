@@ -570,3 +570,11 @@ All links in the tables below are relative to the directory containing this READ
 - **Different synthesis netlists:** the standalone Yosys result (409.14 µm²) and OpenLane synthesis result (447.93 µm²) are from different flows and should not be directly conflated.
 - **LVS scope:** the reported LVS is LEF-based with standard cells black-boxed, not transistor-level GDS LVS.
 - **Stale flow summary:** the flow's `final_summary_report.csv` was generated before the DRC, LVS and antenna checks had run. Its `Flow_failed`/`-1` entries are therefore not used as evidence for the signoff results in this README.
+
+
+## Project Presentation Video
+
+This video demonstrates my VLSI training project, including RTL design, simulation using GTKWave, synthesis using Yosys, static timing analysis, and the physical design flow.
+
+**Watch the complete project presentation:** [Click here to watch the video]([YOUR_VIDEO_LINK_HERE](https://docs.google.com/videos/d/15gZ3w8UIJuOG_leWDrT49OMDo6bcM69_WlkSp1JNoqI/play?usp=sharing))
+
