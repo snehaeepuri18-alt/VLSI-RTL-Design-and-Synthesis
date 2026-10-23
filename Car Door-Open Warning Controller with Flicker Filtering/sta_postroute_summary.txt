@@ -1,0 +1,126 @@
+===== ff_100C_1v65.txt =====
+           5.26   slack (MET)
+           7.20   slack (MET)
+           4.64   slack (MET)
+           0.31   slack (MET)
+wns 0.00
+tns 0.00
+===== ff_100C_1v95.txt =====
+           5.21   slack (MET)
+           7.36   slack (MET)
+           4.71   slack (MET)
+           0.24   slack (MET)
+wns 0.00
+tns 0.00
+===== ff_n40C_1v56.txt =====
+           5.31   slack (MET)
+           7.05   slack (MET)
+           4.54   slack (MET)
+           0.35   slack (MET)
+wns 0.00
+tns 0.00
+===== ff_n40C_1v65.txt =====
+           5.28   slack (MET)
+           7.16   slack (MET)
+           4.60   slack (MET)
+           0.31   slack (MET)
+wns 0.00
+tns 0.00
+===== ff_n40C_1v76.txt =====
+           5.24   slack (MET)
+           7.25   slack (MET)
+           4.66   slack (MET)
+           0.28   slack (MET)
+wns 0.00
+tns 0.00
+===== ff_n40C_1v95_ccsnoise.txt =====
+           5.20   slack (MET)
+           7.37   slack (MET)
+           4.72   slack (MET)
+           0.23   slack (MET)
+wns 0.00
+tns 0.00
+===== ff_n40C_1v95.txt =====
+           5.20   slack (MET)
+           7.37   slack (MET)
+           4.72   slack (MET)
+           0.23   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_100C_1v40.txt =====
+           5.89   slack (MET)
+           5.14   slack (MET)
+           3.69   slack (MET)
+           1.08   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_100C_1v60.txt =====
+           5.62   slack (MET)
+           6.03   slack (MET)
+           4.11   slack (MET)
+           0.75   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_n40C_1v28.txt =====
+           6.91   slack (MET)
+          -2.73   slack (VIOLATED)
+           1.56   slack (MET)
+           1.18   slack (MET)
+wns -2.73
+tns -7.69
+===== ss_n40C_1v35.txt =====
+           6.45   slack (MET)
+           1.30   slack (MET)
+           2.53   slack (MET)
+           1.37   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_n40C_1v40.txt =====
+           6.18   slack (MET)
+           3.06   slack (MET)
+           3.03   slack (MET)
+           1.33   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_n40C_1v44.txt =====
+           6.04   slack (MET)
+           4.08   slack (MET)
+           3.32   slack (MET)
+           1.15   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_n40C_1v60_ccsnoise.txt =====
+           5.68   slack (MET)
+           5.88   slack (MET)
+           3.94   slack (MET)
+           0.77   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_n40C_1v60.txt =====
+           5.68   slack (MET)
+           5.88   slack (MET)
+           3.94   slack (MET)
+           0.77   slack (MET)
+wns 0.00
+tns 0.00
+===== ss_n40C_1v76.txt =====
+           5.53   slack (MET)
+           6.43   slack (MET)
+           4.24   slack (MET)
+           0.57   slack (MET)
+wns 0.00
+tns 0.00
+===== tt_025C_1v80.txt =====
+           5.32   slack (MET)
+           7.02   slack (MET)
+           4.55   slack (MET)
+           0.37   slack (MET)
+wns 0.00
+tns 0.00
+===== tt_100C_1v80.txt =====
+           5.33   slack (MET)
+           7.01   slack (MET)
+           4.55   slack (MET)
+           0.37   slack (MET)
+wns 0.00
+tns 0.00

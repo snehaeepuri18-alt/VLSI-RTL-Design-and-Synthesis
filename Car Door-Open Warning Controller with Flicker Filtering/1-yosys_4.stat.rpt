@@ -1,0 +1,28 @@
+
+28. Printing statistics.
+
+=== door_warning ===
+
+   Number of wires:                 36
+   Number of wire bits:             36
+   Number of public wires:          19
+   Number of public wire bits:      19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 31
+     sky130_fd_sc_hd__and3_2         1
+     sky130_fd_sc_hd__dfrtp_2       12
+     sky130_fd_sc_hd__inv_2          6
+     sky130_fd_sc_hd__nor2_2         1
+     sky130_fd_sc_hd__nor2b_2        2
+     sky130_fd_sc_hd__nor3_2         1
+     sky130_fd_sc_hd__o21a_2         1
+     sky130_fd_sc_hd__o221a_2        2
+     sky130_fd_sc_hd__or2_2          2
+     sky130_fd_sc_hd__or2b_2         1
+     sky130_fd_sc_hd__or3_2          1
+     sky130_fd_sc_hd__or4_2          1
+
+   Chip area for module '\door_warning': 447.929600
+

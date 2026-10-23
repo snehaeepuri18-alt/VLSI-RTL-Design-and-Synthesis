@@ -1,0 +1,115 @@
+########## CORNER: ss_n40C_1v40 ##########
+===== SETUP (max) =====
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _35_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   5.00    5.00 ^ input external delay
+   0.00    5.00 ^ rst_n (in)
+   0.00    5.00 ^ _35_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           5.00   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ _35_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.87   10.87   library recovery time
+          10.87   data required time
+---------------------------------------------------------
+          10.87   data required time
+          -5.00   data arrival time
+---------------------------------------------------------
+           5.87   slack (MET)
+
+
+Startpoint: _40_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: warn_led (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _40_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   1.25    1.25 v _40_/Q (sky130_fd_sc_hd__dfrtp_1)
+   0.97    2.22 v _19_/X (sky130_fd_sc_hd__lpflow_inputiso1p_1)
+   0.00    2.22 v warn_led (out)
+           2.22   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+  -2.00    8.00   output external delay
+           8.00   data required time
+---------------------------------------------------------
+           8.00   data required time
+          -2.22   data arrival time
+---------------------------------------------------------
+           5.78   slack (MET)
+
+
+===== HOLD (min) =====
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _35_ (removal check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   5.00    5.00 ^ input external delay
+   0.00    5.00 ^ rst_n (in)
+   0.00    5.00 ^ _35_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           5.00   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _35_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   1.27    1.27   library removal time
+           1.27   data required time
+---------------------------------------------------------
+           1.27   data required time
+          -5.00   data arrival time
+---------------------------------------------------------
+           3.73   slack (MET)
+
+
+Startpoint: _41_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _42_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _41_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   1.07    1.07 ^ _41_/Q (sky130_fd_sc_hd__dfrtp_1)
+   0.00    1.07 ^ _42_/D (sky130_fd_sc_hd__dfrtp_1)
+           1.07   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _42_/CLK (sky130_fd_sc_hd__dfrtp_1)
+  -0.13   -0.13   library hold time
+          -0.13   data required time
+---------------------------------------------------------
+          -0.13   data required time
+          -1.07   data arrival time
+---------------------------------------------------------
+           1.20   slack (MET)
+
+
+===== SUMMARY =====
+worst slack 5.78
+worst slack 1.20
+tns 0.00

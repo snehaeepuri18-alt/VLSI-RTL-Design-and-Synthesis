@@ -1,0 +1,124 @@
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_100C_1v80.lib line 23, default_fanout_load is 0.0.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_100C_1v80.lib line 1, library sky130_fd_sc_hd__tt_100C_1v80 already exists.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_100C_1v80.lib line 23, default_fanout_load is 0.0.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/door_warning/runs/run1/results/lvs/door_warning.lvs.powered.v line 479, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for PHY_56.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/door_warning/runs/run1/results/lvs/door_warning.lvs.powered.v line 721, module sky130_fd_sc_hd__fill_2 not found. Creating black box for FILLER_0_27.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/door_warning/runs/run1/results/lvs/door_warning.lvs.powered.v line 753, module sky130_fd_sc_hd__fill_1 not found. Creating black box for FILLER_0_92.
+CORNER: tt_100C_1v80
+===== report_checks (setup, max) =====
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _36_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (propagated)
+   5.00    5.00 ^ input external delay
+   0.00    5.00 ^ rst_n (in)
+   0.16    5.16 ^ input4/X (sky130_fd_sc_hd__buf_4)
+   0.00    5.16 ^ _36_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           5.16   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.24   10.24   clock network delay (propagated)
+   0.00   10.24   clock reconvergence pessimism
+          10.24 ^ _36_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.24   10.48   library recovery time
+          10.48   data required time
+---------------------------------------------------------
+          10.48   data required time
+          -5.16   data arrival time
+---------------------------------------------------------
+           5.33   slack (MET)
+
+
+Startpoint: _36_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: warn_led (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.24    0.24   clock network delay (propagated)
+   0.00    0.24 ^ _36_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.41    0.66 v _36_/Q (sky130_fd_sc_hd__dfrtp_1)
+   0.24    0.90 v _30_/X (sky130_fd_sc_hd__or2_1)
+   0.09    0.99 v output6/X (sky130_fd_sc_hd__clkbuf_2)
+   0.00    0.99 v warn_led (out)
+           0.99   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (propagated)
+   0.00   10.00   clock reconvergence pessimism
+  -2.00    8.00   output external delay
+           8.00   data required time
+---------------------------------------------------------
+           8.00   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           7.01   slack (MET)
+
+
+===== report_checks (hold, min) =====
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _38_ (removal check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (propagated)
+   5.00    5.00 ^ input external delay
+   0.00    5.00 ^ rst_n (in)
+   0.16    5.16 ^ input4/X (sky130_fd_sc_hd__buf_4)
+   0.00    5.16 ^ _38_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           5.16   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.24    0.24   clock network delay (propagated)
+   0.00    0.24   clock reconvergence pessimism
+           0.24 ^ _38_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.36    0.61   library removal time
+           0.61   data required time
+---------------------------------------------------------
+           0.61   data required time
+          -5.16   data arrival time
+---------------------------------------------------------
+           4.55   slack (MET)
+
+
+Startpoint: _38_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _39_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.24    0.24   clock network delay (propagated)
+   0.00    0.24 ^ _38_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.35    0.59 ^ _38_/Q (sky130_fd_sc_hd__dfrtp_1)
+   0.00    0.59 ^ _39_/D (sky130_fd_sc_hd__dfrtp_1)
+           0.59   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.24    0.24   clock network delay (propagated)
+   0.00    0.24   clock reconvergence pessimism
+           0.24 ^ _39_/CLK (sky130_fd_sc_hd__dfrtp_1)
+  -0.02    0.22   library hold time
+           0.22   data required time
+---------------------------------------------------------
+           0.22   data required time
+          -0.59   data arrival time
+---------------------------------------------------------
+           0.37   slack (MET)
+
+
+===== report_wns =====
+wns 0.00
+===== report_tns =====
+tns 0.00

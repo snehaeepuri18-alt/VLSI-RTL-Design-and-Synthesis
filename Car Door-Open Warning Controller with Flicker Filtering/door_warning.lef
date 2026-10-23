@@ -1,0 +1,171 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO door_warning
+  CLASS BLOCK ;
+  FOREIGN door_warning ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.000 BY 100.000 ;
+  PIN buzzer
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 73.690 96.000 73.970 100.000 ;
+    END
+  END buzzer
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 2.390 0.000 2.670 4.000 ;
+    END
+  END clk
+  PIN door_open
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 94.390 0.000 94.670 4.000 ;
+    END
+  END door_open
+  PIN ignition
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 64.640 100.000 65.240 ;
+    END
+  END ignition
+  PIN moving
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 68.040 4.000 68.640 ;
+    END
+  END moving
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 27.690 96.000 27.970 100.000 ;
+    END
+  END rst_n
+  PIN warn_led
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 48.390 0.000 48.670 4.000 ;
+    END
+  END warn_led
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 78.855 10.640 80.455 87.280 ;
+    END
+  END VPWR
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 49.200 10.640 50.800 87.280 ;
+    END
+  END VPWR
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 19.545 10.640 21.145 87.280 ;
+    END
+  END VPWR
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met5 ;
+        RECT 5.520 75.040 94.300 76.640 ;
+    END
+  END VPWR
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met5 ;
+        RECT 5.520 48.960 94.300 50.560 ;
+    END
+  END VPWR
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met5 ;
+        RECT 5.520 22.880 94.300 24.480 ;
+    END
+  END VPWR
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 64.025 10.640 65.625 87.280 ;
+    END
+  END VGND
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 34.375 10.640 35.975 87.280 ;
+    END
+  END VGND
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met5 ;
+        RECT 5.520 62.000 94.300 63.600 ;
+    END
+  END VGND
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met5 ;
+        RECT 5.520 35.920 94.300 37.520 ;
+    END
+  END VGND
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 94.300 87.125 ;
+      LAYER met1 ;
+        RECT 2.370 10.640 94.690 87.280 ;
+      LAYER met2 ;
+        RECT 2.400 95.720 27.410 96.000 ;
+        RECT 28.250 95.720 73.410 96.000 ;
+        RECT 74.250 95.720 94.660 96.000 ;
+        RECT 2.400 4.280 94.660 95.720 ;
+        RECT 2.950 4.000 48.110 4.280 ;
+        RECT 48.950 4.000 94.110 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 69.040 96.000 87.205 ;
+        RECT 4.400 67.640 96.000 69.040 ;
+        RECT 4.000 65.640 96.000 67.640 ;
+        RECT 4.000 64.240 95.600 65.640 ;
+        RECT 4.000 10.715 96.000 64.240 ;
+      LAYER met4 ;
+        RECT 36.375 10.640 48.800 87.280 ;
+        RECT 51.200 10.640 63.625 87.280 ;
+        RECT 66.025 10.640 78.455 87.280 ;
+  END
+END door_warning
+END LIBRARY
+

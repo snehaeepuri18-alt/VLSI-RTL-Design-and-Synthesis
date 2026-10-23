@@ -1,0 +1,16 @@
+PASS: reset: outputs low
+PASS: idle after reset
+PASS: door open, ignition off
+PASS: door open, ign on, stopped: LED
+PASS: door open, moving: LED + buzzer
+PASS: stopped again: buzzer off
+PASS: door closed: clear
+PASS: moving, door closed: no warning
+PASS: flicker of DELAY-1 cycles ignored
+PASS: pulse of DELAY cycles ignored
+PASS: door opens while moving: alarm
+PASS: ignition off: clear
+PASS: alarm active again
+PASS: reset during alarm: clear
+PASS: idle after reset
+ALL 15 CHECKS PASSED
