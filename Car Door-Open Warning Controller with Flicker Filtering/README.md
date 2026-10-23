@@ -161,8 +161,8 @@ gtkwave door_warning_gls.vcd
 
 - RTL result: [`rtl_result.txt`](rtl_result.txt)
 - Gate-level result: [`gls_result.txt`](gls_result.txt)
-- RTL waveform: [`door_warning_rtl.vcd`](door_warning_rtl.vcd)
-- Gate-level waveform: [`door_warning_gls.vcd`](door_warning_gls.vcd)
+- RTL waveform: [`door_warning_rtl.vcd`](gtkwave_2.png)
+- Gate-level waveform: [`door_warning_gls.vcd`](gtkwave_netlist2.png)
 - Simulation runner: [`run_sim.sh`](run_sim.sh)
 
 **Gate-level note:** the Sky130 functional models require the simulation defines `-DFUNCTIONAL` and `-DUNIT_DELAY=#1`. The project runner is intended to apply the required gate-level options and include the relevant standard-cell model sources.
