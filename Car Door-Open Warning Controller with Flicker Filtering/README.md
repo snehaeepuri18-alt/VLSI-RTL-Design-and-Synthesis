@@ -157,12 +157,25 @@ gtkwave door_warning_rtl.vcd
 gtkwave door_warning_gls.vcd
 ```
 
+### Waveforms (GTKWave)
+
+**RTL simulation** (`gtkwave door_warning_rtl.vcd`)
+
+![RTL waveform in GTKWave](gtkwave_2.png)
+
+**Gate-level simulation** (`gtkwave door_warning_gls.vcd`)
+
+![Gate-level waveform in GTKWave](gtkwave_netlist2.png)
+
+Both simulations run the same testbench and produced identical results (15 / 15 checks passed in each).
+
 ### Simulation artefacts
 
 - RTL result: [`rtl_result.txt`](rtl_result.txt)
 - Gate-level result: [`gls_result.txt`](gls_result.txt)
-- RTL waveform: [`door_warning_rtl.vcd`](gtkwave_2.png)
-- Gate-level waveform: [`door_warning_gls.vcd`](gtkwave_netlist2.png)
+- RTL waveform data: [`door_warning_rtl.vcd`](door_warning_rtl.vcd)
+- Gate-level waveform data: [`door_warning_gls.vcd`](door_warning_gls.vcd)
+- GTKWave screenshots: [RTL](gtkwave_2.png), [gate-level](gtkwave_netlist2.png)
 - Simulation runner: [`run_sim.sh`](run_sim.sh)
 
 **Gate-level note:** the Sky130 functional models require the simulation defines `-DFUNCTIONAL` and `-DUNIT_DELAY=#1`. The project runner is intended to apply the required gate-level options and include the relevant standard-cell model sources.
@@ -274,12 +287,12 @@ Do not add `-overwrite` to an existing run unless you intend to discard its exis
 
 | Stage / check | Reported result |
 |---|---|
-| OpenLane synthesis | 447.93 µm² |
-| Floorplan | 100 × 100 µm die; power grid generated |
+| Synthesis (`run_synthesis`) | 447.93 µm² |
+| Floorplan (`run_floorplan`) | 100 × 100 µm die; power grid generated |
 | Physical-only cells | 56 end caps, 90 tap cells, 0 diodes |
-| Clock-tree synthesis | Slack met; WNS/TNS 0.00 in the flow report |
-| Global routing | Slack met; WNS/TNS 0.00 in the flow report |
-| Detailed routing | No DRC violations reported |
+| Clock-tree synthesis (`run_cts`) | Slack met; WNS/TNS 0.00 in the flow report |
+| Global routing (`run_routing`) | Slack met; WNS/TNS 0.00 in the flow report |
+| Detailed routing (`run_routing`) | No DRC violations reported |
 | Final layout | 691 instances including fill/decap/tap; 48 devices after Netgen merging |
 | Pins | 7 signal pins and 10 power pins |
 
@@ -287,23 +300,23 @@ Do not add `-overwrite` to an existing run unless you intend to discard its exis
 
 The images below are linked by relative path. GitHub displays them inline when the PNGs are committed beside this README.
 
-**Floorplan**
+**Floorplan (`run_floorplan`)** - die area and power grid
 
 ![Floorplan view](door_warning.floorplan.def.png)
 
-**Placement**
+**Placement (`run_placement`)** - standard cells placed
 
 ![Placement view](door_warning.placement.def.png)
 
-**Clock-tree synthesis**
+**Clock-tree synthesis (`run_cts`)** - clock buffer tree
 
 ![CTS view](door_warning.cts.def.png)
 
-**Routed design**
+**Routing (`run_routing`)** - final routed design
 
 ![Final routed DEF view](door_warning.def.png)
 
-**Final GDS layout**
+**Final GDS layout (`run_magic`)** - Magic stream-out
 
 ![GDS layout view](door_warning.gds.png)
 
@@ -311,9 +324,9 @@ The images below are linked by relative path. GitHub displays them inline when t
 
 | Check | Result | Report |
 |---|---|---|
-| Magic DRC | `COUNT: 0` | [`30-29-magic.drc`](30-29-magic.drc) |
-| Antenna check | 0 pins and 0 nets violated; 45 nets checked | [`37-antenna.rpt`](37-antenna.rpt) |
-| Netgen LVS | 0 errors; “Circuits match uniquely” | [`door_warning.lvs.lef.log`](door_warning.lvs.lef.log), [`door_warning.lvs_parsed.lef.log`](door_warning.lvs_parsed.lef.log) |
+| Magic DRC (`run_magic_drc`) | `COUNT: 0` | [`30-29-magic.drc`](30-29-magic.drc) |
+| Antenna check (`run_antenna_check`) | 0 pins and 0 nets violated; 45 nets checked | [`37-antenna.rpt`](37-antenna.rpt) |
+| Netgen LVS (`run_lvs`) | 0 errors; “Circuits match uniquely” | [`door_warning.lvs.lef.log`](door_warning.lvs.lef.log), [`door_warning.lvs_parsed.lef.log`](door_warning.lvs_parsed.lef.log) |
 
 **LVS scope:** the documented comparison is LEF-based, with standard cells treated as black boxes. It is not a transistor-level comparison of the extracted GDS against a transistor-level reference netlist.
 
@@ -477,6 +490,8 @@ All links in the tables below are relative to the directory containing this READ
 | [`gls_result.txt`](gls_result.txt) | Gate-level simulation transcript |
 | [`door_warning_rtl.vcd`](door_warning_rtl.vcd) | RTL waveform for GTKWave |
 | [`door_warning_gls.vcd`](door_warning_gls.vcd) | Gate-level waveform for GTKWave |
+| [`gtkwave_2.png`](gtkwave_2.png) | GTKWave screenshot, RTL simulation |
+| [`gtkwave_netlist2.png`](gtkwave_netlist2.png) | GTKWave screenshot, gate-level simulation |
 
 ### Synthesis and constraints
 
